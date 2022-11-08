@@ -1,0 +1,8 @@
+<ul class="comments_lists">
+    <% @questions.each do |question| %>
+        <li class="question_list">
+          <%= question.question %>
+          <%= link_to "#","#", class: :question_user %>
+        </li>
+    <% end %>     
+</ul>

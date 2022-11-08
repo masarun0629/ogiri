@@ -1,0 +1,15 @@
+<main class="main">
+  <div class="inner">
+    
+    <% if user_signed_in? %>
+       <div class="greeting"> 
+         おいでやす🙇
+         <%= link_to "","#",class: :greeting__link%>
+       </div> 
+    <% end %>
+    
+    <div class="card__wrapper">
+      <%= render partial: 'question', collection: @questions %>
+    </div>
+  </div>
+</main>
