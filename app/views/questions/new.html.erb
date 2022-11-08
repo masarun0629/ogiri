@@ -1,0 +1,12 @@
+<%= form_with model: @question, local: true do |f|%>
+  
+  <div class="field">
+    <%= f.label :question, "お題" %><br />
+    <%= f.text_field :question %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "投稿する", class: :form__btn  %>
+  </div>
+
+<% end %>
