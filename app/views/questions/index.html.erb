@@ -1,15 +1,17 @@
-<main class="main">
+<div class="index_main">
   <div class="inner">
-    
-    <% if user_signed_in? %>
-       <div class="greeting"> 
-         おいでやす🙇
-         <%= link_to "#{current_user.nickname}さん","#",class: :greeting__link%>
-       </div> 
-    <% end %>
-    
-    <div class="card__wrapper">
-      <%= render partial: 'question', collection: @questions %>
-    </div>
+    <ul class="question_lists">
+      <% @questions.each do |question| %>
+        <div class="question_list">
+         <div class="question_answer">
+          <%= link_to question.user.nickname,"#",class: :q %>さんのお題
+         </div>
+         <% if question.image.present? %>※画像付き※<% end %>
+          <div class="question"><%= question.question %></div>
+         <%= link_to "回答ページへ","#",class: :answer_page %>
+         <div class="answer_num"><%= "回答数(1)" %></div>
+        </div> 
+     <% end %>
+    </ul>
   </div>
-</main>
+</div>  

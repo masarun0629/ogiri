@@ -36,20 +36,24 @@ a {
 
 /* ヘッダー */
 
-.header {
-  background-color: blue;
-  margin-bottom: 48px;
-  padding: 20px 0;
+.title{
+  font-size: 40px;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+}
 
+.header {
+  background-color: lightgreen;
+  width:100vw;
 }
 .inner {
-  width: 1024px;
+  width: 1200px;
   margin: 0 auto;
 }
 .nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 .logo {
   width: 200px;
@@ -58,15 +62,16 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: black;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px black;
   border-radius: 3px;
   transition: 0.4s ease;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
 }
 .nav__btn:hover{
-  color: #fff;
+  color: black;
   background: #87CEFA;
 }
 
@@ -82,5 +87,88 @@ a {
   opacity: 0.5;
 }
 
-/* メイン */
+.greeting{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.greeting__link:hover{
+  border-bottom: solid 1px black;
+}
+
+/* main */
+.index_main{
+  height:100vh;
+  width:100vw;
+  background-color: lemonchiffon;
+}
+
+.main{
+  height:100vh;
+  width:100vw;
+  background-color: lemonchiffon;
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+}
+
+.question_lists{
+  display: flex;
+  justify-content: space-between;
+  flex-flow: wrap row ;
+}
+
+.question_list{
+  background-color: whitesmoke;
+  width: 350px;
+  height: 200px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  padding: 10px;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  word-wrap:break-word;
+  border-radius: 10px;
+  position: relative;
+}
+
+.question_user{
+  margin-top: 5px;
+}
+
+.question{
+  margin-top: 10px;
+}
+
+.answer_page{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.answer_num{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
+.answer_page:hover{
+  border-bottom: solid 1px black;
+}
+
+.q:hover{
+  border-bottom: solid 1px black;
+}
+
+/* 投稿ページ */
+
+
+
+
 

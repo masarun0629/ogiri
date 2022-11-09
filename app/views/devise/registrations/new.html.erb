@@ -1,16 +1,17 @@
-<h2>新規登録</h2>
+<div class="main">
+
 
 <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-
+  <h2>新規登録</h2>
   <div class="field">
-    <%= f.label :ニックネーム %> <br />
-    <%= f.text_field :nickname %>
+    <%= f.label :"ニックネーム(スペース含む10文字以内)" %> <br />
+    <%= f.text_field :nickname,maxlength:"10" %>
   </div>
   
   <div class="field">
-    <%= f.label :プロフィール %><br />
-    <%= f.text_field :profile %>
+    <%= f.label :"プロフィール(スペース含む100文字以内、改行不可)" %><br />
+    <%= f.text_area :profile,maxlength:"100" %>
   </div>
   
   <div class="field">
@@ -32,8 +33,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録する" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+</div>
