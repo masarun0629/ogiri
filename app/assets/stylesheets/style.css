@@ -88,9 +88,10 @@ a {
 }
 
 .greeting{
-  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-family: 'Tsukushi B Round Gothic';
   font-size: 20px;
   margin-left: auto;
+  font-weight: bold;
 }
 
 .greeting__link:hover{
@@ -123,7 +124,8 @@ a {
   background-color: whitesmoke;
   width: 350px;
   height: 200px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   display: flex;
   flex-flow: column;
   text-align: center;
@@ -134,8 +136,23 @@ a {
   position: relative;
 }
 
+.index{
+  padding-top: 7px;
+  padding-left: 7px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
 .image{
   margin-top: 10px;
+}
+
+.question_image{
+  font-weight: bold;
+  font-family: ヒラギノ角ゴ ProN W6;
+  white-space: pre-wrap;
+  margin: auto;
+  padding-bottom: 25px;
 }
 
 .num{
@@ -208,7 +225,7 @@ a {
   background-color: whitesmoke;
   width: 600px;
   height: 450px;
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   flex-flow: column;
   text-align: center;

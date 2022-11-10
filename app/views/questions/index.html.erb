@@ -1,5 +1,6 @@
 <div class="index_main">
   <div class="inner">
+   <div class="index">お題一覧：新着順</div>
     <ul class="question_lists">
       <% num=0 %>
       <% @questions.each do |question| %>
@@ -11,8 +12,11 @@
          <div class="question_answer">
           <%= link_to question.user.nickname,"#",class: :q %>さんのお題
          </div>
-         <% if question.image.present? %>※画像付き※<% end %>
+         <% if question.image.present? %>※画像付き※
+          <div class="question_image"><%= question.question %></div>
+         <% else %>
           <div class="question"><%= question.question %></div>
+         <% end %>
          <%= link_to "回答ページへ", question_answers_path(question.id),class: :answer_page %>
          <div class="answer_num"><%= "回答数(#{question.answers.count})" %></div>
         </div> 
