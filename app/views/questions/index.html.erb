@@ -5,6 +5,9 @@
       <% @questions.each do |question| %>
         <div class="question_list">
         <div class="num"><%= num+=1 %>.</div>
+        <% if user_signed_in? && current_user.id == question.user_id %>
+        <%= link_to '削除', question_path(question.id), method: :delete,class: :question_delete %>
+        <% end %>
          <div class="question_answer">
           <%= link_to question.user.nickname,"#",class: :q %>さんのお題
          </div>

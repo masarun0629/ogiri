@@ -14,6 +14,12 @@ class QuestionsController < ApplicationController
     else
       render :new
     end
+  end
+  
+  def destroy
+    question = Question.find(params[:id])
+    question.destroy
+    redirect_to root_path
   end  
 
   private
