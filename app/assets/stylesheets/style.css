@@ -134,12 +134,23 @@ a {
   position: relative;
 }
 
+.num{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
 .question_user{
   margin-top: 5px;
 }
 
 .question{
   margin-top: 10px;
+  font-weight: bold;
+  font-family: ヒラギノ角ゴ ProN W6;
+  white-space: pre-wrap;
 }
 
 .answer_page{
@@ -167,6 +178,7 @@ a {
 }
 
 /* 投稿ページ */
+
 
 
 

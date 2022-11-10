@@ -1,8 +1,10 @@
 <div class="index_main">
   <div class="inner">
     <ul class="question_lists">
+      <% num=0 %>
       <% @questions.each do |question| %>
         <div class="question_list">
+        <div class="num"><%= num+=1 %>.</div>
          <div class="question_answer">
           <%= link_to question.user.nickname,"#",class: :q %>さんのお題
          </div>
