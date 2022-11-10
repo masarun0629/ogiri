@@ -8,4 +8,5 @@ class User < ApplicationRecord
   validates :profile,presence: true,length: { maximum: 100 }
   
   has_many  :questions
+  has_many  :answers
 end

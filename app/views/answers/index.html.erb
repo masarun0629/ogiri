@@ -1,0 +1,13 @@
+<div class="index_main">
+  <div class="inner">
+    <ul class="question_lists">
+        <div class="question_list">
+         <div class="question_answer">
+          <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
+         </div>
+         <% if @question.image.present? %><% end %>
+          <div class="question"><%= @question.question %></div>
+        </div> 
+    </ul>
+  </div>
+</div>

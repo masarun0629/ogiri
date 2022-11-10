@@ -13,8 +13,8 @@
          </div>
          <% if question.image.present? %>※画像付き※<% end %>
           <div class="question"><%= question.question %></div>
-         <%= link_to "回答ページへ","#",class: :answer_page %>
-         <div class="answer_num"><%= "回答数(1)" %></div>
+         <%= link_to "回答ページへ", question_answers_path(question.id),class: :answer_page %>
+         <div class="answer_num"><%= "回答数(#{question.answers.count})" %></div>
         </div> 
      <% end %>
     </ul>
