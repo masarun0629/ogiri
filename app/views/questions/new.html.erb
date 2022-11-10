@@ -1,0 +1,23 @@
+<div class="main">
+<%= form_with model: @question, local: true do |f|%>
+  
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      お題画像
+    </div>
+    <div class="click-upload">
+        <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+  
+  <div class="field">
+    <%= f.label :question, "お題（スペース含む最大80文字）" %><br />
+    <%= f.text_area :question,maxlength:"80", rows:"4",cols:"36" %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit "投稿する", class: :form__btn  %>
+  </div>
+
+<% end %>
+</div>
