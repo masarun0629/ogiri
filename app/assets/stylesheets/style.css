@@ -123,7 +123,7 @@ a {
   background-color: whitesmoke;
   width: 350px;
   height: 200px;
-  margin-top: 20px;
+  margin-top: 40px;
   display: flex;
   flex-flow: column;
   text-align: center;
@@ -132,6 +132,10 @@ a {
   word-wrap:break-word;
   border-radius: 10px;
   position: relative;
+}
+
+.image{
+  margin-top: 10px;
 }
 
 .num{
@@ -165,6 +169,7 @@ a {
   font-weight: bold;
   font-family: ヒラギノ角ゴ ProN W6;
   white-space: pre-wrap;
+  margin: auto;
 }
 
 .answer_page{
@@ -191,10 +196,56 @@ a {
   border-bottom: solid 1px black;
 }
 
-/* 投稿ページ */
+/* 回答ページ */
 
+.question_lists_answer{
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row ;
+}
 
+.question_list_answer{
+  background-color: whitesmoke;
+  width: 600px;
+  height: 450px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  padding: 10px;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  word-wrap:break-word;
+  border-radius: 10px;
+  position: relative;
+  font-size: 25px;
+}
 
+.item-img{
+  width:300px;
+  height:230px;
+  margin : 0 auto
+}
+
+.questions{
+  margin: auto;
+  font-weight: bold;
+  font-family: ヒラギノ角ゴ ProN W6;
+  white-space: pre-wrap;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/* フッター */
+
+.footer {
+  background-color: #999;
+  padding: 10px 0;
+}
+.copyright {
+  text-align: center;
+  color: #fff;
+  font-size: 10px;
+}
 
 
 

@@ -1,13 +1,28 @@
+<% if @question.image.present? %>
 <div class="index_main">
   <div class="inner">
-    <ul class="question_lists">
-        <div class="question_list">
+    <ul class="question_lists_answer">
+        <div class="question_list_answer">
          <div class="question_answer">
           <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
          </div>
-         <% if @question.image.present? %><% end %>
+         <%= image_tag @question.image, class: "item-img" %>
           <div class="question"><%= @question.question %></div>
         </div> 
     </ul>
   </div>
 </div>
+<% else %>
+<div class="index_main">
+  <div class="inner">
+    <ul class="question_lists_answer">
+        <div class="question_list_answer">
+         <div class="question_answer">
+          <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
+         </div>
+          <div class="questions"><%= @question.question %></div>
+        </div> 
+    </ul>
+  </div>
+</div>
+<% end %>
