@@ -217,14 +217,18 @@ a {
 
 .question_lists_answer{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-flow: wrap row ;
+}
+
+.answer_form{
+  
 }
 
 .question_list_answer{
   background-color: whitesmoke;
   width: 600px;
-  height: 450px;
+  height: 600px;
   margin-top: 40px;
   display: flex;
   flex-flow: column;

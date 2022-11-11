@@ -8,7 +8,15 @@
          </div>
          <%= image_tag @question.image, class: "item-img" %>
           <div class="question"><%= @question.question %></div>
-        </div> 
+          <%= form_with model: @answer,class: :answer_form, local: true do |f|%>
+          <div class="field_answer">
+          <%= f.text_area :answer,maxlength:"80", rows:"4",cols:"36" %>
+          </div>
+          <div class="actions_answer">
+          <%= f.submit "回答する", class: :form__btn__answer  %>
+          </div>
+          <% end %>
+        </div>
     </ul>
   </div>
 </div>
@@ -21,8 +29,18 @@
           <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
          </div>
           <div class="questions"><%= @question.question %></div>
+          <%= form_with model: @answer,class: :answer_form, local: true do |f|%>
+          <div class="field_answer">
+          <%= f.text_area :answer,maxlength:"80", rows:"4",cols:"36" %>
+          </div>
+          <div class="actions_answer">
+          <%= f.submit "回答する", class: :form__btn__answer  %>
+          </div>
+          <% end %>
         </div> 
     </ul>
   </div>
 </div>
 <% end %>
+
+
