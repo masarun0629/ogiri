@@ -1,46 +1,49 @@
-<% if @question.image.present? %>
 <div class="index_main">
   <div class="inner">
     <ul class="question_lists_answer">
-        <div class="question_list_answer">
-         <div class="question_answer">
-          <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
-         </div>
-         <%= image_tag @question.image, class: "item-img" %>
-          <div class="question"><%= @question.question %></div>
-          <%= form_with model: @answer,class: :answer_form, local: true do |f|%>
-          <div class="field_answer">
-          <%= f.text_area :answer,maxlength:"80", rows:"4",cols:"36" %>
-          </div>
-          <div class="actions_answer">
-          <%= f.submit "回答する", class: :form__btn__answer  %>
-          </div>
-          <% end %>
+      <div class="question_list_answer">
+        <div class="question_answer">
+         <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
         </div>
-    </ul>
-  </div>
-</div>
-<% else %>
-<div class="index_main">
-  <div class="inner">
-    <ul class="question_lists_answer">
-        <div class="question_list_answer">
-         <div class="question_answer">
-          <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
+        <% if @question.image.present? %>
+         <%= image_tag @question.image, class: "item-img" %>
+        <% end %>
+        
+        <div class="question"><%= @question.question %></div>
+        
+        <%= form_with model: [@question,@answer],local: true do |f|%>
+         <div class="field_answer">
+          <%= f.text_area :answer,maxlength:"72", rows:"3",cols:"39",placeholder: "スペース含む最大72文字,3行まで" %>
          </div>
-          <div class="questions"><%= @question.question %></div>
-          <%= form_with model: @answer,class: :answer_form, local: true do |f|%>
-          <div class="field_answer">
-          <%= f.text_area :answer,maxlength:"80", rows:"4",cols:"36" %>
-          </div>
-          <div class="actions_answer">
-          <%= f.submit "回答する", class: :form__btn__answer  %>
-          </div>
-          <% end %>
+         <div class="actions_answer">
+          <%= f.submit "回答する", class: :form__btn__answer %>
+         </div>
+        <% end %>
+      </div>
+        
+        <div class="answer_index">回答一覧：新着順</div>
+        
+        <div class="answer_lists">
+          <% num=0 %>
+          <% @answers.each do |answer| %>
+            <div class="answer_list">
+              
+              <div class="answers_num"><%= num+=1 %>.</div>
+              
+              <% if user_signed_in? && current_user.id == answer.user_id %>
+                <%= link_to '削除', "/questions/#{@question.id}/answers/#{answer.id}", method: :delete,class: :answer_delete %>
+              <% end %>
+              
+              <div class="answer_name"><%= link_to answer.user.nickname,"#",class: :answer_name_q %>さん</div>
+              
+              <div class="answer_answer"><%= answer.answer %></div>
+            
+            </div>
+          <% end %> 
         </div> 
     </ul>
   </div>
 </div>
-<% end %>
+
 
 

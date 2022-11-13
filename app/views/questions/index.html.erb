@@ -1,26 +1,14 @@
 <div class="index_main">
   <div class="inner">
-   <div class="index">お題一覧：新着順</div>
-    <ul class="question_lists">
-      <% num=0 %>
-      <% @questions.each do |question| %>
-        <div class="question_list">
-        <div class="num"><%= num+=1 %>.</div>
-        <% if user_signed_in? && current_user.id == question.user_id %>
-        <%= link_to '削除', question_path(question.id), method: :delete,class: :question_delete %>
+   <div class="index">
+        <% if params[:answer_count] %>
+        お題一覧：<%= link_to '新着順',root_path ,class: "new_questions"%>
+                <%= link_to '回答数の多い順(0は除く)',root_path(answer_count:"true") %>       
+        <% else %>
+        お題一覧：<%= link_to '新着順',root_path %>
+                <%= link_to '回答数の多い順',root_path(answer_count:"true"),class: "new_questions" %>
         <% end %>
-         <div class="question_answer">
-          <%= link_to question.user.nickname,"#",class: :q %>さんのお題
-         </div>
-         <% if question.image.present? %>※画像付き※
-          <div class="question_image"><%= question.question %></div>
-         <% else %>
-          <div class="question"><%= question.question %></div>
-         <% end %>
-         <%= link_to "回答ページへ", question_answers_path(question.id),class: :answer_page %>
-         <div class="answer_num"><%= "回答数(#{question.answers.count})" %></div>
-        </div> 
-     <% end %>
-    </ul>
+    </div>
+      <%= render 'questions', model: @questions %>
   </div>
 </div>  

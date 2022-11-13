@@ -5,13 +5,13 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   <h2>新規登録</h2>
   <div class="field">
-    <%= f.label :"ニックネーム(スペース含む10文字以内)" %> <br />
+    <%= f.label :"ニックネーム(スペース含む最大10文字)" %> <br />
     <%= f.text_field :nickname,maxlength:"10" %>
   </div>
   
   <div class="field">
-    <%= f.label :"プロフィール(スペース含む100文字以内)" %><br />
-    <%= f.text_area :profile,maxlength:"100", rows:"4",cols:"36" %>
+    <%= f.label :"プロフィール(スペース含む最大100文字,5行まで)" %><br />
+    <%= f.text_area :profile,maxlength:"100", rows:"5",cols:"32" %>
   </div>
   
   <div class="field">
