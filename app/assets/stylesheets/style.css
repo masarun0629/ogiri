@@ -88,13 +88,18 @@ a {
 }
 
 .greeting{
-  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-family: 'Tsukushi B Round Gothic';
   font-size: 20px;
   margin-left: auto;
+  font-weight: bold;
 }
 
 .greeting__link:hover{
   border-bottom: solid 1px black;
+}
+
+textarea{
+  resize: none;
 }
 
 /* main */
@@ -123,7 +128,8 @@ a {
   background-color: whitesmoke;
   width: 350px;
   height: 200px;
-  margin-top: 40px;
+  margin-bottom: 20px;
+  margin-top: 10px;
   display: flex;
   flex-flow: column;
   text-align: center;
@@ -134,8 +140,23 @@ a {
   position: relative;
 }
 
+.index{
+  padding-top: 7px;
+  padding-left: 7px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
 .image{
   margin-top: 10px;
+}
+
+.question_image{
+  font-weight: bold;
+  font-family: ヒラギノ角ゴ ProN W6;
+  white-space: pre-wrap;
+  margin: auto;
+  padding-bottom: 25px;
 }
 
 .num{
@@ -196,19 +217,23 @@ a {
   border-bottom: solid 1px black;
 }
 
+.new_questions{
+  opacity: 0.1;
+}
+
 /* 回答ページ */
 
 .question_lists_answer{
   display: flex;
-  justify-content: center;
+  justify-content: start;
   flex-flow: wrap row ;
 }
 
 .question_list_answer{
   background-color: whitesmoke;
   width: 600px;
-  height: 450px;
-  margin-top: 20px;
+  height: 670px;
+  margin-top: 40px;
   display: flex;
   flex-flow: column;
   text-align: center;
@@ -221,9 +246,10 @@ a {
 }
 
 .item-img{
-  width:300px;
-  height:230px;
-  margin : 0 auto
+  width:400px;
+  height:300px;
+  margin : 0 auto;
+  margin-top: 10px;
 }
 
 .questions{
@@ -233,6 +259,67 @@ a {
   white-space: pre-wrap;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.answer_index{
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+  margin-top: 7px;
+  margin-left: 300px;
+}
+
+.answer_lists{
+  position: absolute;
+  top: 98px;
+  right: 130px;
+}
+
+.answer_list{
+  background-color: white;
+  margin-bottom: 13px;
+  height: 124px;
+  width: 400px;
+  text-align: center;
+  border: solid 3px lightsalmon;
+  border-radius: 10px;
+  position: relative;
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  display: flex;
+  flex-flow: column;
+}
+
+.answer_answer{
+  margin: auto;
+  font-family: ヒラギノ角ゴ ProN W6;
+  font-weight: bold;
+  white-space: pre-wrap;
+  padding-bottom: 20px;
+}
+
+.answer_delete{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 5px;
+  margin-top: 0px;
+  opacity: 0.2;
+}
+
+.answer_delete:hover{
+  border-bottom: solid 1px black;
+  opacity: 1;
+}
+
+.answers_num{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 5px;
+  margin-top: 0px;
+}
+
+.answer_name_q:hover{
+  border-bottom: solid 1px black;
 }
 
 /* フッター */
