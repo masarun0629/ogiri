@@ -11,6 +11,7 @@
         
         <div class="question"><%= @question.question %></div>
         
+        <% if user_signed_in? %>
         <%= form_with model: [@question,@answer],local: true do |f|%>
          <div class="field_answer">
           <%= f.text_area :answer,maxlength:"72", rows:"3",cols:"39",placeholder: "スペース含む最大72文字,3行まで" %>
@@ -18,6 +19,7 @@
          <div class="actions_answer">
           <%= f.submit "回答する", class: :form__btn__answer %>
          </div>
+        <% end %>
         <% end %>
       </div>
         
