@@ -218,7 +218,7 @@ textarea{
 }
 
 .new_questions{
-  opacity: 0.1;
+  opacity: 0.15;
 }
 
 /* 回答ページ */
@@ -293,7 +293,7 @@ textarea{
   font-family: ヒラギノ角ゴ ProN W6;
   font-weight: bold;
   white-space: pre-wrap;
-  padding-bottom: 20px;
+  padding-bottom: 0;
 }
 
 .answer_delete{
@@ -320,6 +320,11 @@ textarea{
 
 .answer_name_q:hover{
   border-bottom: solid 1px black;
+}
+
+.heart{
+  margin-left: auto;
+  margin-right: 5px;
 }
 
 /* フッター */

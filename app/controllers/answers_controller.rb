@@ -2,7 +2,11 @@ class AnswersController < ApplicationController
  
  def index
   @question = Question.find(params[:question_id])
-  @answers = @question.answers.order(created_at: :desc)
+  if params[:like_count]
+    @answers = @question.answers.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+  else
+    @answers = @question.answers.all.order(created_at: :desc)
+  end  
   @answer = Answer.new
  end
  
@@ -13,14 +17,15 @@ class AnswersController < ApplicationController
   if @answer.save
     redirect_to  question_answers_path
   else
-    render :index
+    #render :index
+    redirect_back(fallback_location: root_path)
   end    
  end
  
  def destroy
   answer = Answer.find(params[:id])
   answer.destroy
-  redirect_to question_answers_path
+  redirect_back(fallback_location: root_path)
  end
  
  private

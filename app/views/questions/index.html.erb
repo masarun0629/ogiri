@@ -2,11 +2,11 @@
   <div class="inner">
    <div class="index">
         <% if params[:answer_count] %>
-        お題一覧：<%= link_to '新着順',root_path ,class: "new_questions"%>
-                <%= link_to '回答数の多い順(0は除く)',root_path(answer_count:"true") %>       
+        お題一覧：<%= link_to '人気順',root_path(answer_count:"true") %> 
+                <%= link_to '新着順',root_path ,class: "new_questions" %>      
         <% else %>
         お題一覧：<%= link_to '新着順',root_path %>
-                <%= link_to '回答数の多い順',root_path(answer_count:"true"),class: "new_questions" %>
+                <%= link_to '人気順',root_path(answer_count:"true"),class: "new_questions" %>
         <% end %>
     </div>
       <%= render 'questions', model: @questions %>

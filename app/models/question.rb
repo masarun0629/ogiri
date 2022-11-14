@@ -5,5 +5,4 @@ class Question < ApplicationRecord
   has_one_attached :image
   has_many  :answers , dependent: :destroy
   
-  scope :latest, -> {Answer.group(:question_id).order('count(question_id) desc').pluck(:question_id)}
 end
