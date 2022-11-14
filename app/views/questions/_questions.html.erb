@@ -2,7 +2,12 @@
   <% num=0 %>
     <% @questions.each do |question| %>
       <div class="question_list">
-        <div class="num"><%= num+=1 %>.</div>
+        <% if params[:page] %>
+          <% num+=1 %>
+          <div class="num"><%=(num-9) + params[:page].to_i * 9 %>.</div>
+        <% else %>
+          <div class="num"><%= num+=1 %>.</div>
+        <% end %>
         <% if user_signed_in? && current_user.id == question.user_id %>
           <%= link_to '削除', question_path(question.id), method: :delete,class: :question_delete %>
         <% end %>
@@ -17,5 +22,5 @@
          <%= link_to "回答ページへ", question_answers_path(question.id),class: :answer_page %>
          <div class="answer_num"><%= "回答数(#{question.answers.count})" %></div>
       </div> 
-    <% end %>
+    <% end %>  
 </ul>

@@ -26,12 +26,14 @@
         <div class="answer_index">
         
         <% if params[:like_count] %>
-        回答一覧：<%= link_to 'ランキング',question_answers_path(like_count:"true")%>
-                <%= link_to '新着順', question_answers_path,class: "new_questions"%>       
+         回答一覧：<%= link_to 'ランキング',question_answers_path(like_count:"true")%>
+                 <%= link_to '新着順', question_answers_path,class: "new_questions"%>       
         <% else %>
-        回答一覧：<%= link_to '新着順',question_answers_path %>
-                <%= link_to 'ランキング',question_answers_path(like_count:"true"),class: "new_questions" %>
+         回答一覧：<%= link_to '新着順',question_answers_path %>
+                 <%= link_to 'ランキング',question_answers_path(like_count:"true"),class: "new_questions" %>
         <% end %>
+        
+        <div class="page"><%= paginate @answers %></div>
         
         </div>
         
@@ -39,14 +41,22 @@
           <% num=0 %>
           <% @answers.each do |answer| %>
             <div class="answer_list">
-              
+             <% if params[:page] %>
+              <% num+=1 %>
+              <% unless params[:like_count] %>
+                <div class="answers_num"><%= (num-5) + params[:page].to_i * 5 %>.</div>
+              <% else %>
+                <div class="answers_num"><%= (num-5) + params[:page].to_i * 5 %>位</div>
+              <% end %>
+             <% else %> 
               <% unless params[:like_count] %>
                 <div class="answers_num"><%= num+=1 %>.</div>
               <% else %>
                 <div class="answers_num"><%= num+=1 %>位</div>
               <% end %>
+             <% end %> 
                 
-              <% if user_signed_in? && current_user.id == answer.user_id %>
+                <% if user_signed_in? && current_user.id == answer.user_id %>
                 <%= link_to '削除', "/questions/#{@question.id}/answers/#{answer.id}", method: :delete,class: :answer_delete %>
               <% end %>
               

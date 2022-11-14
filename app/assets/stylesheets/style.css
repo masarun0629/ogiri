@@ -147,6 +147,12 @@ textarea{
   font-weight: bold;
 }
 
+.page{
+  display: inline-block;
+  color: lightblue;
+  font-family:'Courier New', Courier, monospace;
+}
+
 .image{
   margin-top: 10px;
 }
@@ -218,7 +224,12 @@ textarea{
 }
 
 .new_questions{
-  opacity: 0.15;
+  opacity: 0.1;
+}
+
+.new_questions:hover{
+  border-bottom: solid 1px black;
+  opacity: 0.6;
 }
 
 /* 回答ページ */
@@ -265,7 +276,14 @@ textarea{
   font-family: 'Tsukushi B Round Gothic';
   font-weight: bold;
   margin-top: 7px;
-  margin-left: 300px;
+  margin-left: 180px;
+}
+
+.answers_index{
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+  margin-top: 7px;
+  padding-left: 250px;
 }
 
 .answer_lists{
@@ -293,7 +311,7 @@ textarea{
   font-family: ヒラギノ角ゴ ProN W6;
   font-weight: bold;
   white-space: pre-wrap;
-  padding-bottom: 0;
+  
 }
 
 .answer_delete{
