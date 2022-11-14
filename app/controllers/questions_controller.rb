@@ -2,7 +2,8 @@ class QuestionsController < ApplicationController
   
   def index
     if params[:answer_count]
-      @questions = Question.find(Answer.group(:question_id).order('count(question_id) desc').pluck(:question_id))
+      #@questions = Question.find(Answer.group(:question_id).order('count(question_id) desc').pluck(:question_id))
+      @questions = Question.includes(:answers).sort {|a,b| b.answers.size <=> a.answers.size}
     else
       @questions = Question.all.order(created_at: :desc)
     end
@@ -24,7 +25,7 @@ class QuestionsController < ApplicationController
   def destroy
     question = Question.find(params[:id])
     question.destroy
-    redirect_to root_path 
+    redirect_back(fallback_location: root_path)
   end  
 
   private
