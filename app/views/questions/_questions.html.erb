@@ -18,4 +18,5 @@
          <div class="answer_num"><%= "回答数(#{question.answers.count})" %></div>
       </div> 
     <% end %>
+  <%= paginate @questions %>  
 </ul>

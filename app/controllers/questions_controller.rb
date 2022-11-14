@@ -5,7 +5,8 @@ class QuestionsController < ApplicationController
       #@questions = Question.find(Answer.group(:question_id).order('count(question_id) desc').pluck(:question_id))
       @questions = Question.includes(:answers).sort {|a,b| b.answers.size <=> a.answers.size}
     else
-      @questions = Question.all.order(created_at: :desc)
+      #@questions = Question.all.order(created_at: :desc)
+      @questions = Question.page(params[:page]).per(9).order(created_at: :desc)
     end
   end
   
