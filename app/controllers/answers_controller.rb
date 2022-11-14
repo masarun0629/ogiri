@@ -3,9 +3,10 @@ class AnswersController < ApplicationController
  def index
   @question = Question.find(params[:question_id])
   if params[:like_count]
-    @answers = @question.answers.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    answers = @question.answers.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}
+    @answers = Kaminari.paginate_array(answers).page(params[:page]).per(5)
   else
-    @answers = @question.answers.all.order(created_at: :desc)
+    @answers = @question.answers.page(params[:page]).per(5).order(created_at: :desc)
   end  
   @answer = Answer.new
  end

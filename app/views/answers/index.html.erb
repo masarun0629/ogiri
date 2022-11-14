@@ -33,6 +33,8 @@
                 <%= link_to 'ランキング',question_answers_path(like_count:"true"),class: "new_questions" %>
         <% end %>
         
+        <div class="page"><%= paginate @answers %></div>
+        
         </div>
         
         <div class="answer_lists">
