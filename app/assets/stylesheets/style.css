@@ -127,7 +127,7 @@ textarea{
 .question_list{
   background-color: whitesmoke;
   width: 350px;
-  height: 200px;
+  height: 204px;
   margin-bottom: 20px;
   margin-top: 10px;
   display: flex;
@@ -141,7 +141,7 @@ textarea{
 }
 
 .index{
-  padding-top: 7px;
+  padding-top: 9px;
   padding-left: 7px;
   font-family: 'Tsukushi B Round Gothic';
   font-weight: bold;
@@ -149,7 +149,7 @@ textarea{
 
 .page{
   display: inline-block;
-  color: lightblue;
+  color: skyblue;
   font-family:'Courier New', Courier, monospace;
 }
 
@@ -243,7 +243,7 @@ textarea{
 .question_list_answer{
   background-color: whitesmoke;
   width: 600px;
-  height: 670px;
+  height: 675px;
   margin-top: 40px;
   display: flex;
   flex-flow: column;
@@ -257,8 +257,8 @@ textarea{
 }
 
 .item-img{
-  width:400px;
-  height:300px;
+  width:415px;
+  height:315px;
   margin : 0 auto;
   margin-top: 10px;
 }
@@ -294,8 +294,8 @@ textarea{
 
 .answer_list{
   background-color: white;
-  margin-bottom: 13px;
-  height: 124px;
+  margin-bottom: 10px;
+  height: 128px;
   width: 400px;
   text-align: center;
   border: solid 3px lightsalmon;
