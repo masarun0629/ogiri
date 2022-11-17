@@ -102,6 +102,17 @@ textarea{
   resize: none;
 }
 
+.ranks{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  margin-left: 50px;
+  font-size: 20px;
+}
+
+.ranks:hover{
+  font-weight: bold;
+  border-bottom: solid 1px black;
+}
+
 /* main */
 .index_main{
   height:100vh;
@@ -443,6 +454,34 @@ textarea{
 
 .redirect_back:hover{
   opacity: 1;
+}
+
+/* ユーザーランキングページ */
+.rank{
+  display: flex;
+  flex-flow: column;
+  position: relative;
+  justify-content: center;
+}
+
+.ranking{
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.users{
+  font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.user{
+  margin-bottom: 5px;
+  font-weight: bold;
 }
 
 /* フッター */
