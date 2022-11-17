@@ -107,6 +107,7 @@ textarea{
   height:100vh;
   width:100vw;
   background-color: lemonchiffon;
+  position: relative;
 }
 
 .main{
@@ -116,6 +117,7 @@ textarea{
   display: flex;
   justify-content: center;
   padding-top: 50px;
+  position: relative;
 }
 
 .question_lists{
@@ -311,7 +313,6 @@ textarea{
   font-family: ヒラギノ角ゴ ProN W6;
   font-weight: bold;
   white-space: pre-wrap;
-  
 }
 
 .answer_delete{
@@ -343,6 +344,105 @@ textarea{
 .heart{
   margin-left: auto;
   margin-right: 5px;
+}
+
+/* ユーザー詳細 */
+
+.user_box{
+  background-color: whitesmoke;
+  width: 600px;
+  height: 630px;
+  display:flex;
+  flex-flow: column;
+  justify-content:space-between;
+  padding: 10px 40px 30px 40px;
+  text-align: center;
+  border-radius: 15px;
+  border: solid 3px brown;
+  font-size: 20px;
+  position: relative; 
+}
+
+.profile{
+  font-size: 25px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+.user_name{  
+  font-size: 20px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+.user_profile{  
+  font-size: 20px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+.users_profile{
+  white-space: pre-wrap;
+}
+
+.user_question{  
+  font-size: 20px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+.user_answer{  
+  font-size: 20px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+.user_rank{
+  font-size: 20px;
+  font-family: 'Tsukushi B Round Gothic';
+  font-weight: bold;
+}
+
+.edit{
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0.2;
+  margin: 5px 5px 0 0;
+  font-size: 15px;
+}
+
+.edit:hover{
+  border-bottom: solid 1px black;
+  opacity: 1;
+}
+
+.redirect{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px 0 0 125px;
+  color: blue;
+  opacity: 0.2;
+  font-size: small;
+}
+
+.redirect:hover{
+  opacity: 1;
+}
+
+.redirect_back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 10px 0 0 270px;
+  color: blue;
+  opacity: 0.2;
+  font-size: small;
+}
+
+.redirect_back:hover{
+  opacity: 1;
 }
 
 /* フッター */

@@ -1,5 +1,6 @@
 <div class="main">
-
+<%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
+<%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
 
 <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -10,8 +11,8 @@
   </div>
   
   <div class="field">
-    <%= f.label :"プロフィール(スペース含む最大100文字,5行まで)" %><br />
-    <%= f.text_area :profile,maxlength:"100", rows:"5",cols:"32" %>
+    <%= f.label :"ひとこと(スペース含む最大100文字,4行まで)" %><br />
+    <%= f.text_area :profile,maxlength:"100", rows:"4",cols:"41" %>
   </div>
   
   <div class="field">
