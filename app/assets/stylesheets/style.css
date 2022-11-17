@@ -290,13 +290,13 @@ textarea{
 
 .answer_lists{
   position: absolute;
-  top: 98px;
+  top: 41px;
   right: 130px;
 }
 
 .answer_list{
   background-color: white;
-  margin-bottom: 10px;
+  margin-bottom: 9px;
   height: 128px;
   width: 400px;
   text-align: center;
