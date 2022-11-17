@@ -2,12 +2,9 @@ class QuestionsController < ApplicationController
   
   def index
     if params[:answer_count]
-      #@questions = Question.find(Answer.group(:question_id).order('count(question_id) desc').pluck(:question_id))
-      #@questions = Question.includes(:answers).sort {|a,b| b.answers.size <=> a.answers.size}
       questions = Question.includes(:answers).sort {|a,b| b.answers.size <=> a.answers.size}
       @questions = Kaminari.paginate_array(questions).page(params[:page]).per(9)
     else
-      #@questions = Question.all.order(created_at: :desc)
       @questions = Question.page(params[:page]).per(9).order(created_at: :desc)
     end
   end

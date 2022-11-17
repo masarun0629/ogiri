@@ -14,6 +14,6 @@
        <div class="user_profile">ひとこと</div><div class="users_profile"><%= @user.profile %></div>
        <div class="user_question">お題出題数</div><%= @user.questions.count %>
        <div class="user_answer">お題回答数</div><%= @user.answers.count %>
-       <div class="user_rank">総ハート獲得数</div><%= @user.id %>
+       <div class="user_rank">総ハート獲得数</div><%= @user_answers_likes.count %>
  </div>
 </div>
