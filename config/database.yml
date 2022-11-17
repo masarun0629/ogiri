@@ -49,9 +49,6 @@ test:
 #
 production:
   <<: *default
-  database: ogiri_production
-  username: ogiri
-  password: <%= ENV['OGIRI_DATABASE_PASSWORD'] %>
 
   adapter: mysql2
   database: ogiri_production
