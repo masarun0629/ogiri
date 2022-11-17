@@ -16,7 +16,7 @@
         <div class="title"><%= link_to "大喜利掲示板",root_path %></div>
             <% if user_signed_in? %>
              <div class="greeting">
-                おいでやす<%= link_to "#{current_user.nickname}","#",class: :greeting__link%>さん🙇
+                おいでやす<%= link_to "#{current_user.nickname}",user_path(current_user.id),class: :greeting__link%>さん🙇
              </div> 
              <div class="nav__right"> 
                <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: :nav__btn %>

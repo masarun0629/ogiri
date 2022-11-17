@@ -12,7 +12,7 @@
           <%= link_to '削除', question_path(question.id), method: :delete,class: :question_delete %>
         <% end %>
         <div class="question_answer">
-          <%= link_to question.user.nickname,"#",class: :q %>さんのお題
+          <%= link_to question.user.nickname,user_path(question.user.id),class: :q %>さんのお題
         </div>
         <% if question.image.present? %>※画像付き※
           <div class="question_image"><%= question.question %></div>

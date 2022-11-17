@@ -1,5 +1,5 @@
 class Answer < ApplicationRecord
-  validates :answer,presence: true, length: { maximum: 80 }
+  validates :answer,presence: true, length: { maximum: 72 }
   
   belongs_to :user 
   belongs_to :question

@@ -3,7 +3,7 @@
     <ul class="question_lists_answer">
       <div class="question_list_answer">
         <div class="question_answer">
-         <%= link_to @question.user.nickname,"#",class: :q %>さんのお題
+         <%= link_to @question.user.nickname,user_path(@question.user.id),class: :q %>さんのお題
         </div>
         <% if @question.image.present? %>
          <%= image_tag @question.image, class: "item-img" %>
@@ -60,7 +60,7 @@
                 <%= link_to '削除', "/questions/#{@question.id}/answers/#{answer.id}", method: :delete,class: :answer_delete %>
               <% end %>
               
-              <div class="answer_name"><%= link_to answer.user.nickname,"#",class: :answer_name_q %>さん</div>
+              <div class="answer_name"><%= link_to answer.user.nickname,user_path(answer.user.id),class: :answer_name_q %>さん</div>
               
               <div class="answer_answer"><%= answer.answer %></div>
             
