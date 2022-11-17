@@ -1,4 +1,6 @@
 <div class="main">
+<%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
+<%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
 <%= form_with model: @question, local: true do |f|%>
   
   <div class="img-upload">

@@ -1,4 +1,19 @@
-<div class="index_main">
-  <%= @user.nickname %>
-  <%= @user.profile%>
+<div class="main">
+<%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
+<%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
+
+ <div class="user_box">
+       <div class="profile">
+          <% unless current_user.id == @user.id %>
+            <%= @user.nickname %>さんのプロフィール
+          <% else %>
+            自分のプロフィール
+          <% end %>  
+       </div>
+       <div class="user_name">ランキング</div><%= @user.id %>位 / <%= "#{@users.count}人" %>
+       <div class="user_profile">ひとこと</div><div class="users_profile"><%= @user.profile %></div>
+       <div class="user_question">お題出題数</div><%= @user.questions.count %>
+       <div class="user_answer">お題回答数</div><%= @user.answers.count %>
+       <div class="user_rank">総ハート獲得数</div><%= @user.id %>
+ </div>
 </div>
