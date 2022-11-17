@@ -1,4 +1,15 @@
 <div class="index_main">
 <%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
 <%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
+ <div class="ranking"><%= "ユーザーランキングTOP10(#{@users.count}人中)" %></div>
+  <div class="rank">
+    <div class="users">
+     <% num = 0 %>
+      <% @users.each do |user| %>
+       <% num += 1 %>
+       <div class="rank_num"><%= num %>位</div>
+       <div class="user"><%=link_to user.nickname,user_path(user.id) %><% if num == 1 %>👑<% end %></div>
+      <% end %>
+    </div>
+  </div>
 </div>
