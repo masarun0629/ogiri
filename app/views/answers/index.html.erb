@@ -65,15 +65,15 @@
               <div class="answer_name"><%= link_to answer.user.nickname,user_path(answer.user.id),class: :answer_name_q %>さん</div>
               
               <div class="answer_answer"><%= answer.answer %></div>
-            
+             
               <% if answer.liked_by?(current_user) %>
                 <%= link_to  "/questions/#{@question.id}/answers/#{answer.id}/likes",class: "likes", method: :delete do %>
                   <div class="heart"><%= "🧡" %><% end %><%= " × #{(answer.likes.count)}" %></div>
-            
               <% else %>
                 <%= link_to "/questions/#{@question.id}/answers/#{answer.id}/likes",class: "likes", method: :post do %>
                   <div class="heart"><%= "🤍" %><% end %><%= " × #{(answer.likes.count)}" %></div>
               <% end %>
+             
             </div>
           <% end %> 
         </div> 
