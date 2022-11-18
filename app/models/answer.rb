@@ -4,7 +4,7 @@ class Answer < ApplicationRecord
   belongs_to :user 
   belongs_to :question
   has_many :likes, dependent: :destroy
-  has_many :liked_users, through: :likes, source: :user
+  has_many :liked_users, dependent: :destroy,through: :likes, source: :user
   
   def liked_by?(user)
     likes.exists?(user_id: user.id)
