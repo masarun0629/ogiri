@@ -151,6 +151,7 @@ textarea{
   word-wrap:break-word;
   border-radius: 10px;
   position: relative;
+  border: solid 2px black;
 }
 
 .index{
@@ -267,6 +268,7 @@ textarea{
   border-radius: 10px;
   position: relative;
   font-size: 25px;
+  border: solid 2px black;
 }
 
 .item-img{
@@ -301,7 +303,7 @@ textarea{
 
 .answer_lists{
   position: absolute;
-  top: 41px;
+  top: 40px;
   right: 130px;
 }
 
@@ -311,8 +313,8 @@ textarea{
   height: 128px;
   width: 400px;
   text-align: center;
-  border: solid 3px black;
-  border-radius: 10px;
+  border: solid 2px black;
+  border-radius: 5px;
   position: relative;
   font-family: “HGP行書体”, “ＭＳ Ｐ明朝”, “MS PMincho”, serif;
   display: flex;
@@ -368,8 +370,8 @@ textarea{
   justify-content:space-between;
   padding: 10px 40px 30px 40px;
   text-align: center;
-  border-radius: 15px;
-  border: solid 3px brown;
+  border-radius: 30px;
+  border: solid 5px brown;
   font-size: 20px;
   position: relative; 
 }
