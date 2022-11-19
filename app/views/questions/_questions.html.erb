@@ -19,8 +19,10 @@
         <% else %>
           <div class="question"><%= question.question %></div>
         <% end %>
-        <%= link_to "回答ページへ", question_answers_path(question.id),class: :answer_page %>
+        <% if user_signed_in? %>
+          <%= link_to "回答ページへ", question_answers_path(question.id),class: :answer_page %>
+        <% end %>
         <div class="answer_num"><%= "回答数(#{question.answers.count})" %></div>
-      </div> 
+        </div> 
     <% end %>  
 </ul>
