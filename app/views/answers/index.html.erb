@@ -1,6 +1,6 @@
 <div class="index_main">
-<%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
-<%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
+  <%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
+  <%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
   <div class="inner">
     <ul class="question_lists_answer">
       <div class="question_list_answer">
@@ -10,23 +10,19 @@
         <% if @question.image.present? %>
          <%= image_tag @question.image, class: "item-img" %>
         <% end %>
-        
         <div class="question"><%= @question.question %></div>
-        
         <% if user_signed_in? %>
-        <%= form_with model: [@question,@answer],local: true do |f|%>
-         <div class="field_answer">
-          <%= f.text_area :answer,maxlength:"72", rows:"3",cols:"39",placeholder: "スペース含む最大72文字,3行まで" %>
-         </div>
-         <div class="actions_answer">
-          <%= f.submit "回答する", class: :form__btn__answer %>
-         </div>
-        <% end %>
+          <%= form_with model: [@question,@answer],local: true do |f|%>
+            <div class="field_answer">
+              <%= f.text_area :answer,maxlength:"72", rows:"3",cols:"39",placeholder: "スペース含む最大72文字,3行まで" %>
+            </div>
+            <div class="actions_answer">
+              <%= f.submit "回答する", class: :form__btn__answer %>
+            </div>
+          <% end %>
         <% end %>
       </div>
-        
-        <div class="answer_index">
-        
+      <div class="answer_index">
         <% if params[:like_count] %>
          回答一覧：<%= link_to 'ランキング',question_answers_path(like_count:"true")%>
                  <%= link_to '新着順', question_answers_path,class: "new_questions"%>       
@@ -34,38 +30,31 @@
          回答一覧：<%= link_to '新着順',question_answers_path %>
                  <%= link_to 'ランキング',question_answers_path(like_count:"true"),class: "new_questions" %>
         <% end %>
-        
         <div class="page"><%= paginate @answers %></div>
-        
-        </div>
-        
-        <div class="answer_lists">
-          <% num=0 %>
+      </div>
+      <div class="answer_lists">
+        <% num=0 %>
           <% @answers.each do |answer| %>
             <div class="answer_list">
-             <% if params[:page] %>
-              <% num+=1 %>
-              <% unless params[:like_count] %>
-                <div class="answers_num"><%= (num-5) + params[:page].to_i * 5 %>.</div>
-              <% else %>
-                <div class="answers_num"><%= (num-5) + params[:page].to_i * 5 %>位</div>
-              <% end %>
-             <% else %> 
-              <% unless params[:like_count] %>
-                <div class="answers_num"><%= num+=1 %>.</div>
-              <% else %>
-                <div class="answers_num"><%= num+=1 %>位</div>
-              <% end %>
-             <% end %> 
-                
-                <% if user_signed_in? && current_user.id == answer.user_id %>
+              <% if params[:page] %>
+                <% num+=1 %>
+                <% unless params[:like_count] %>
+                  <div class="answers_num"><%= (num-5) + params[:page].to_i * 5 %>.</div>
+                <% else %>
+                  <div class="answers_num"><%= (num-5) + params[:page].to_i * 5 %>位</div>
+                <% end %>
+              <% else %> 
+                <% unless params[:like_count] %>
+                  <div class="answers_num"><%= num+=1 %>.</div>
+                <% else %>
+                  <div class="answers_num"><%= num+=1 %>位</div>
+                <% end %>
+              <% end %> 
+              <% if user_signed_in? && current_user.id == answer.user_id %>
                 <%= link_to '削除', "/questions/#{@question.id}/answers/#{answer.id}", method: :delete,class: :answer_delete %>
               <% end %>
-              
               <div class="answer_name"><%= link_to answer.user.nickname,user_path(answer.user.id),class: :answer_name_q %>さん</div>
-              
               <div class="answer_answer"><%= answer.answer %></div>
-             
               <% if answer.liked_by?(current_user) %>
                 <%= link_to  "/questions/#{@question.id}/answers/#{answer.id}/likes",class: "likes", method: :delete do %>
                   <div class="heart"><%= "🧡" %><% end %><%= " × #{(answer.likes.count)}" %></div>
@@ -73,10 +62,9 @@
                 <%= link_to "/questions/#{@question.id}/answers/#{answer.id}/likes",class: "likes", method: :post do %>
                   <div class="heart"><%= "🤍" %><% end %><%= " × #{(answer.likes.count)}" %></div>
               <% end %>
-             
             </div>
           <% end %> 
-        </div> 
+      </div> 
     </ul>
   </div>
 </div>
