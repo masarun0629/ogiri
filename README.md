@@ -70,9 +70,12 @@ Things you may want to cover:
 
 # アプリケーション名
 大喜利掲示板
+
 # アプリケーション概要
 大喜利のお題を投稿したり、投稿されたお題に回答したりできる掲示板。
+
 # URL
+http://43.206.44.
 
 # 利用方法
 ## 目標投稿
@@ -91,14 +94,22 @@ Things you may want to cover:
 
 # アプリケーションを作成した背景	
 コロナ禍の昨今、自宅での生活の時間が増えた世の中の人たちはボキャブラリーに飢えていると思われる。そこでほんの少しの息抜きとして15分程度の休憩時間でサクッとできるボキャブラリーに富んだ大喜利掲示板というアプリを作りたいと思った。そしてどうせ作るなら少しでもユーザーに張り合いや目的を持ってもらうべく、自信が回答したお題の面白さを評価してもらえる機能や面白さを極めたい人のためにランキング機能も実装することにした。
+
 # 洗い出した要件
 
 https://docs.google.com/spreadsheets/d/10NFWHjbY-MUN0hTN2wmji473_GUbEuUAP9_s-5DQYDU/edit#gid=982722306
 
+# 実装した機能についての画像やGIFおよびその説明
+
+
+
+
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/a4436c38389db3b77cfbbe3e7a6dcb20.png)](https://gyazo.com/a4436c38389db3b77cfbbe3e7a6dcb20)
+
 # 画面遷移図
 [![Image from Gyazo](https://i.gyazo.com/563d1b5f24884c159d9b8b2ee181aa65.png)](https://gyazo.com/563d1b5f24884c159d9b8b2ee181aa65)
+
 # 開発環境
 Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
 
