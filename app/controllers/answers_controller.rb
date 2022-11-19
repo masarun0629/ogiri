@@ -18,7 +18,6 @@ class AnswersController < ApplicationController
   if @answer.save
     redirect_to  question_answers_path
   else
-    #render :index
     redirect_back(fallback_location: root_path)
   end    
  end
