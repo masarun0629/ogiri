@@ -1,5 +1,5 @@
 class QuestionsController < ApplicationController
-  
+  before_action :authenticate_user!, except: [:index]
   def index
     if params[:answer_count]
       questions = Question.includes(:answers).sort {|a,b| b.answers.size <=> a.answers.size}
@@ -24,8 +24,10 @@ class QuestionsController < ApplicationController
   
   def destroy
     question = Question.find(params[:id])
-    question.destroy
-    redirect_back(fallback_location: root_path)
+    if question.user_id == current_user.id
+      question.destroy
+      redirect_to root_path
+    end  
   end  
 
   private

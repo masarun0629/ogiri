@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  
+  before_action :authenticate_user!
+  before_action :set_user, only: [:index,:show]
   def index
-    @users = User.all
     if params[:like_average]
       answer_like_count = {}
       User.all.each do |user|
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
   end
   
   def show
-    @users = User.all
     @user = User.find(params[:id])
     @user_answers = @user.answers
     @likes_count = 0
@@ -34,6 +33,10 @@ class UsersController < ApplicationController
     @user_answer_like_ranks = answer_like_count.sort_by { |_, v| v }.reverse.to_h.keys
   end
   
+  private
+  def set_user
+    @users = User.all
+  end 
 end
 
 
