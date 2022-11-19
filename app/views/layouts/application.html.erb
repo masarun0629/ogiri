@@ -13,28 +13,25 @@
     <header class="header">
       <div class="inner">
         <div class="nav">
-        <div class="title"><%= link_to "大喜利掲示板",root_path %></div>
-          <div class="ranks"><%= link_to "ユーザーランキング",users_path %></div>
-            <% if user_signed_in? %>
-             <div class="greeting">
-                おいでやす<%= link_to "#{current_user.nickname}",user_path(current_user.id),class: :greeting__link%>さん🙇
-             </div> 
-             <div class="nav__right"> 
-               <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: :nav__btn %>
-               <%= link_to "お題投稿", new_question_path, class: :nav__btn %>
-             </div> 
-          
-            <% else %>
-          
-             <div class="nav__right">
-               <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-               <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-             </div>
-            <% end %>
-          
-      </div>
+          <div class="title"><%= link_to "大喜利掲示板",root_path %></div>
+            <div class="ranks"><%= link_to "ユーザーランキング",users_path %></div>
+              <% if user_signed_in? %>
+                <div class="greeting">
+                  おいでやす<%= link_to "#{current_user.nickname}",user_path(current_user.id),class: :greeting__link%>さん🙇
+                </div> 
+                <div class="nav__right"> 
+                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: :nav__btn %>
+                  <%= link_to "お題投稿", new_question_path, class: :nav__btn %>
+                </div> 
+              <% else %>
+                <div class="nav__right">
+                  <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
+                  <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
+                </div>
+              <% end %>
+            </div>
     </header>
-    <%= yield %>
+      <%= yield %>
    <footer class="footer">
       <p class="copyright">Copyright © OGIRI KEIJIBAN All rights reserved.</p>
     </footer>

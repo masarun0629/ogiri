@@ -1,64 +1,59 @@
 <div class="index_main">
-<%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
-<%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
- <div class="ranking"><%= "ユーザーランキングTOP10(#{@users.count}人中)" %></div>
-   <div class="rank_index">
+  <%= link_to '< 前のページへ戻る',:back, class: "redirect_back" %>
+  <%= link_to '<< トップページへ戻る',root_path, class: "redirect" %>
+  <div class="ranking"><%= "ユーザーランキングTOP10(#{@users.count}人中)" %></div>
+    <div class="rank_index">
+      <% if params[:like_average] %>
+        <%= link_to '総合ランキング',users_path,class: "new_questions" %>:
+        <%= link_to '平均ランキング(1回答あたり)', users_path(like_average:"true") %>       
+      <% else %>
+        <%= link_to '総合ランキング',users_path %>:
+        <%= link_to '平均ランキング(1回答あたり)',users_path(like_average:"true"),class: "new_questions" %>
+      <% end %>
+    </div>
     <% if params[:like_average] %>
-      <%= link_to '総合ランキング',users_path,class: "new_questions" %>:
-      <%= link_to '平均ランキング(1回答あたり)', users_path(like_average:"true") %>       
+      <div class="rankings">
+        <table border="1">
+          <tr>
+            <th>👑</th><th>ニックネーム</th><th>平均🧡獲得数</th>
+          </tr>
+            <% num = 0 %>
+            <% @user_answer_like_ranks.first(10).each do |user| %>
+              <% num += 1%>
+                <tr>
+                  <td><%= num %>位</td>
+                  <td><%= link_to user.nickname,user_path(user.id),class: "rank_user" %></td>
+                  <% user_answers = user.answers %>
+                  <% likes_count = 0 %>
+                  <% user_answers.each do |answer| %>
+                    <% likes_count += answer.likes.count %>
+                  <% end %>
+                  <td><%= sprintf("%.2f",likes_count/user_answers.count.to_f) %></td>
+                </tr>
+          <% end %>
+        </table>
+      </div>
     <% else %>
-      <%= link_to '総合ランキング',users_path %>:
-      <%= link_to '平均ランキング(1回答あたり)',users_path(like_average:"true"),class: "new_questions" %>
+      <div class="rankings">
+        <table border="1">
+          <tr>
+            <th>👑</th><th>ニックネーム</th><th>合計🧡獲得数</th>
+          </tr>
+            <% num = 0 %>
+            <% @user_answer_like_ranks.first(10).each do |user| %>
+              <% num += 1%>
+                <tr>
+                  <td><%= num %>位</td>
+                  <td><%= link_to user.nickname,user_path(user.id),class: "rank_user" %></td>
+                  <% user_answers = user.answers %>
+                  <% likes_count = 0 %>
+                  <% user_answers.each do |answer| %>
+                    <% likes_count += answer.likes.count %>
+                  <% end %>
+                  <td><%= likes_count %></td>
+                </tr>
+            <% end %>
+        </table>
+      </div>
     <% end %>
-   </div>
-
-  <% if params[:like_average] %>
-  <div class="rankings">
-  <table border="1">
-  <tr>
-    <th>👑</th><th>ニックネーム</th><th>平均🧡獲得数</th>
-  </tr>
-  <% num = 0 %>
-  <% @user_answer_like_ranks.first(10).each do |user| %>
-  <% num += 1%>
-  <tr>
-    <td><%= num %>位</td>
-    <td><%= link_to user.nickname,user_path(user.id),class: "rank_user" %></td>
-    <% user_answers = user.answers %>
-    <% likes_count = 0 %>
-    <% user_answers.each do |answer| %>
-      <% likes_count += answer.likes.count %>
-    <% end %>
-    <td><%= sprintf("%.2f",likes_count/user_answers.count.to_f) %></td>
-  </tr>
-  <% end %>
-  </table>
-  </div>
-  
-  
-  <% else %>
-  <div class="rankings">
-  <table border="1">
-  <tr>
-    <th>👑</th><th>ニックネーム</th><th>合計🧡獲得数</th>
-  </tr>
-  <% num = 0 %>
-  <% @user_answer_like_ranks.first(10).each do |user| %>
-  <% num += 1%>
-  <tr>
-    <td><%= num %>位</td>
-    <td><%= link_to user.nickname,user_path(user.id),class: "rank_user" %></td>
-    <% user_answers = user.answers %>
-    <% likes_count = 0 %>
-    <% user_answers.each do |answer| %>
-      <% likes_count += answer.likes.count %>
-    <% end %>
-    <td><%= likes_count %></td>
-  </tr>
-  <% end %>
-  </table>
-  </div>
-  <% end %>
-  
-
 </div>
