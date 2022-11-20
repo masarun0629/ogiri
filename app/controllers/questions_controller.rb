@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
+  
   def index
     if params[:answer_count]
       questions = Question.includes(:answers).sort {|a,b| b.answers.size <=> a.answers.size}

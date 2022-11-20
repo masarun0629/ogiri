@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:index,:show]
+  
   def index
     if params[:like_average]
       answer_like_count = {}

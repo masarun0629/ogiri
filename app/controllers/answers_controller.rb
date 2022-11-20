@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_question, only: [:index,:create]
+  
   def index
     if params[:like_count]
       answers = @question.answers.includes(:liked_users).sort {|a,b| b.liked_users.size <=> a.liked_users.size}

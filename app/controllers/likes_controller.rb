@@ -1,5 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_answer, only: [:create,:destroy]
+  
   def create
     like = current_user.likes.new(answer_id: @answer.id)
     like.save
