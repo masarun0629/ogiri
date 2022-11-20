@@ -22,19 +22,19 @@ RSpec.describe Question, type: :model do
     
     context '投稿できない場合' do
       
-      it "questionが空では登録できない" do
+      it "questionが空では投稿できない" do
         @question.question = ''
         @question.valid?
         expect(@question.errors.full_messages).to include("Question translation missing: ja.activerecord.errors.models.question.attributes.question.blank")
       end
       
-      it "questionが81文字以上では登録できない" do
+      it "questionが81文字以上では投稿できない" do
         @question.question = "#{"あ"*81}"
         @question.valid?
         expect(@question.errors.full_messages).to include("Question translation missing: ja.activerecord.errors.models.question.attributes.question.too_long")
       end
       
-      it 'userが紐付いていないと保存できない' do
+      it 'userが紐付いていないと投稿できない' do
         @question.user = nil
         @question.valid?
         expect(@question.errors.full_messages).to include("User translation missing: ja.activerecord.errors.models.question.attributes.user.required")
