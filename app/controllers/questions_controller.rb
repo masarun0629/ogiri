@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
     question = Question.find(params[:id])
     if question.user_id == current_user.id
       question.destroy
-      redirect_to root_path
+      redirect_back(fallback_location: root_path)
     end  
   end  
 

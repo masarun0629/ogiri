@@ -18,14 +18,14 @@ class AnswersController < ApplicationController
       redirect_to  question_answers_path
     else
       redirect_back(fallback_location: root_path)
-    end    
+    end      
   end
  
   def destroy
     answer = Answer.find(params[:id])
     if answer.user_id == current_user.id
       answer.destroy
-      redirect_to  question_answers_path
+      redirect_back(fallback_location: root_path)
     end  
   end
  
