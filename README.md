@@ -75,7 +75,12 @@ Things you may want to cover:
 大喜利のお題を投稿したり、投稿されたお題に回答したりできる掲示板。
 
 # URL
-http://43.206.44.
+http://43.206.44.7
+
+# テスト用アカウント
+・メールアドレス：o8o58642424@gmail.com
+
+・パウワード：1a3c5e
 
 # 利用方法
 ## 目標投稿
@@ -100,9 +105,29 @@ http://43.206.44.
 https://docs.google.com/spreadsheets/d/10NFWHjbY-MUN0hTN2wmji473_GUbEuUAP9_s-5DQYDU/edit#gid=982722306
 
 # 実装した機能についての画像やGIFおよびその説明
-
-
-
+### トップページから新規登録ページに遷移する動画
+https://gyazo.com/abeb69cc8ecfe5ee871787f164877b97
+### 新規登録をしてトップページに遷移する動画
+https://gyazo.com/7b4ae0d52e8116e8c650946436b03ca4
+### トップページからお題投稿ページに遷移する動画
+https://gyazo.com/17305aa7cfb35520572715b22ca20d18
+### お題を投稿してトップページに遷移する動画
+https://gyazo.com/f01defa91832d1585d4c7bdac1d6468e
+### トップページからお題回答ページに遷移する動画
+https://gyazo.com/93828621044b412246def9e66631a65b
+### お題回答ページでお題に回答する動画
+https://gyazo.com/712cc3df8047bebb54d5c7a0bc6a6b6a
+### 回答にいいねをつけて解除する動画
+https://gyazo.com/3a0e0f1b1980fa9bef2d9247d9dffa30
+### 自分の投稿した回答を削除する動画
+https://gyazo.com/adf0ab0b3d90442d9d6b75b651f72cb0
+### 自分の投稿したお題を削除する動画
+https://gyazo.com/0f9d4319887e789c9a557195c6aa1919
+### ユーザー名のリンクからプロフィールページに遷移する動画
+https://gyazo.com/bf9f77f770b5ff1a8fea53e10b289093
+### ユーザーランキングページに遷移して2種類のランキングを切り替えて表示させる動画
+https://gyazo.com/046c5e7c728201455f0fd131fb80506
+### 動画はありませんがお題と回答の並び替え機能、ページネーション機能も実装しています。
 
 # データベース設計
 [![Image from Gyazo](https://i.gyazo.com/a4436c38389db3b77cfbbe3e7a6dcb20.png)](https://gyazo.com/a4436c38389db3b77cfbbe3e7a6dcb20)
