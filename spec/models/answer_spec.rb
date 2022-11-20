@@ -17,13 +17,13 @@ RSpec.describe Answer, type: :model do
     
     context '投稿できる場合' do
     
-      it "answerが空では登録できない" do
+      it "answerが空では投稿できない" do
         @answer.answer = ''
         @answer.valid?
         expect(@answer.errors.full_messages).to include("Answer translation missing: ja.activerecord.errors.models.answer.attributes.answer.blank")
       end
       
-      it "answerが73文字以上では登録できない" do
+      it "answerが73文字以上では投稿できない" do
         @answer.answer = "#{"あ"*73}"
         @answer.valid?
         expect(@answer.errors.full_messages).to include("Answer translation missing: ja.activerecord.errors.models.answer.attributes.answer.too_long")
