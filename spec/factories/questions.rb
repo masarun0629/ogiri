@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :question do
-    question      {"こんな学校は嫌だ"}
+    question      {Faker::Lorem.sentence}
     association :user
     
     after(:build) do |item|
