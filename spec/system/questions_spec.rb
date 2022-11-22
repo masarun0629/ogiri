@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Questions", type: :system do
+RSpec.describe "お題投稿", type: :system do
   before do
     @user = FactoryBot.create(:user)
     @question_question = Faker::Lorem.sentence
