@@ -77,3 +77,7 @@ gem 'image_processing', '~> 1.2'
 gem 'kaminari', '~> 0.17.0'
 
 gem 'jquery-rails'
+
+group :production do
+  gem 'pg'
+end
